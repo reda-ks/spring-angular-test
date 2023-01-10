@@ -19,7 +19,7 @@ import javax.persistence.Table;
 public class Order implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(nullable = false, updatable = false)
+	@Column(nullable = false)
 	private Long id;
 	@Column
 	private String Reference = UUID.randomUUID().toString();
