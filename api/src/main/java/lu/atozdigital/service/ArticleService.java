@@ -4,13 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 import lu.atozdigital.model.Article;
 import lu.atozdigital.repo.ArticleRepo;
@@ -27,10 +22,9 @@ public class ArticleService {
 	public Optional<Article> findArticleById(Long id) {
 		return articlerepo.findById(id);
 	}
-	
-	public List<Article> findAllArticle(){
+
+	public List<Article> findAllArticle() {
 		return articlerepo.findAll();
 	}
-
 
 }

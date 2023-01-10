@@ -8,12 +8,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @Entity
-@Table
+@Table(name="Articles")
 public class Article implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -27,6 +29,15 @@ public class Article implements Serializable {
 	private String picture;
 	public String getName() {
 		return name;
+	}
+	@ManyToOne
+	private Order order;
+	
+	public Order getOrder() {
+		return order;
+	}
+	public void setOrder(Order order) {
+		this.order = order;
 	}
 	public void setName(String name) {
 		this.name = name;
