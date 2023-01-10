@@ -40,4 +40,11 @@ public class ArticleResource {
 		}
 		return new ResponseEntity<>(article.get(), HttpStatus.OK);
 	}
+	
+	@GetMapping
+	public List<Article> getAllArticle() {
+		List<Article> article = new ArrayList<Article>();
+		article = articleService.findAllArticle();
+		return article;
+	}
 }
