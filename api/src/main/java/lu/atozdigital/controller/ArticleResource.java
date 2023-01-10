@@ -31,4 +31,13 @@ public class ArticleResource {
 		Article newarticle = articleService.addArticle(article);
 		return new ResponseEntity<>(newarticle, HttpStatus.CREATED);
 	}
+
+	@GetMapping("/{id}")
+	public ResponseEntity<Article> getArticleById(@PathVariable("id") Long id) {
+		Optional<Article> article = articleService.findArticleById(id);
+		if (!article.isPresent()) {
+			return new ResponseEntity<>(article.get(), HttpStatus.BAD_REQUEST);
+		}
+		return new ResponseEntity<>(article.get(), HttpStatus.OK);
+	}
 }
