@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import lu.atozdigital.model.Article;
 import lu.atozdigital.model.Order;
 import lu.atozdigital.service.OrderService;
 
@@ -21,7 +22,7 @@ public class OrderRessource {
 	@Autowired
 	private OrderService orderService;
 
-	//get all orders
+	// get all orders
 	@GetMapping
 	public List<Order> getAllOrder() {
 		List<Order> order = new ArrayList<Order>();
@@ -29,6 +30,10 @@ public class OrderRessource {
 		return order;
 	}
 
-	
+	@PostMapping
+	public ResponseEntity<Order> addOrder(@RequestBody Order order) {
+		Order neworder = orderService.addOrder(order);
+		return new ResponseEntity<>(neworder, HttpStatus.CREATED);
+	}
 
 }
