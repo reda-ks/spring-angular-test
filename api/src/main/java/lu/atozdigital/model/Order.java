@@ -25,8 +25,8 @@ public class Order implements Serializable {
 	private String Reference = UUID.randomUUID().toString();
 	@Column
 	private Date date;
-	@OneToMany(mappedBy = "order")
-	private List<Article> Articles;
+	//@OneToMany(mappedBy = "order")
+	//private List<Article> Articles;
 
 	public Order() {
 
@@ -53,12 +53,12 @@ public class Order implements Serializable {
 		this.date = date;
 	}
 
-	public List<Article> getArticles() {
+	/*public List<Article> getArticles() {
 		return Articles;
 	}
 
 	public void setArticles(List<Article> articles) {
 		Articles = articles;
-	}
+	}*/
 
 }

@@ -1,0 +1,8 @@
+.navbarr {
+  display: flex;
+  background-color: #f8f9fa !important;
+  box-shadow: 15%;
+}
+.body{
+    display: flex;
+}

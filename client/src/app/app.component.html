@@ -1,0 +1,19 @@
+<nav class="navbar navbarr">
+  <button
+    [routerLink]="['Articles']"
+    [routerLinkActive]="['active']"
+    class="btn"
+  >
+    <h6>Articles</h6>
+  </button>
+  <button
+    [routerLink]="['orders']"
+    [routerLinkActive]="['active']"
+    class="btn"
+    style="margin-right: 89%"
+  >
+    <h6>Orders</h6>
+  </button>
+</nav>
+<br />
+<router-outlet></router-outlet>

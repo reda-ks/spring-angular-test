@@ -9,21 +9,13 @@ import { ArticleServiceService } from './article-service.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  public article: Article[] = [];
-
-  constructor(private articleService: ArticleServiceService) {}
+  hide:boolean=false;
+  constructor() {}
   ngOnInit(): void {
-    this.getArticle();
+  }
+  show(){
+    this.hide=true;
   }
 
-  public getArticle(): void {
-    this.articleService.getArticle().subscribe(
-      (response: Article[]) => {
-        this.article = response;
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
-  }
+  
 }

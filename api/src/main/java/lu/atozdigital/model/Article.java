@@ -25,20 +25,13 @@ public class Article implements Serializable {
 	private String name;
 	@Column
 	private Double price;
-	@Column
+	@Column(length = 2048)
 	private String picture;
 	public String getName() {
 		return name;
 	}
-	@ManyToOne
-	private Order order;
 	
-	public Order getOrder() {
-		return order;
-	}
-	public void setOrder(Order order) {
-		this.order = order;
-	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}

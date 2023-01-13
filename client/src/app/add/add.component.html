@@ -1,0 +1,91 @@
+<!--<form class="modal-bod" style="width: 30%; margin-left: 10%;">
+    <div class="form-group">
+        <label>Nom</label>
+        <input type="text" ngModel name="name" class="form-control" id="name" placeholder="name" required />
+    </div>
+    <br>
+    <div class="form-group">
+        <label>Price</label>
+        <input type="text" ngModel name="price" class="form-control" id="name" placeholder="price" required />
+    </div>
+    <br>
+    <div class="form-group">
+        <label>Picture</label>
+        <input type="text" ngModel name="picture" class="form-control" id="name" placeholder="tape valid Url" required />
+    </div>
+
+</form>-->
+<div 
+  class="modal fade"
+  id="addArticleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="addArticleModalLabel"
+  aria-hidden="true"
+>
+  
+
+        <h5 class="modal-title" id="addArticleModalLabel">Add Article</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form style="width: 30%; margin-left: 3%;" #addForm="ngForm" (ngSubmit)="onAddArticle(addForm)">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              ngModel
+              name="name"
+              class="form-control"
+              id="name"
+              placeholder="Name"
+              required
+            />
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input
+              type="text"
+              ngModel
+              name="price"
+              class="form-control"
+              id="price"
+              placeholder="Price"
+              required
+            />
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="picture">Picture</label>
+            <input
+              type="text"
+              ngModel
+              name="picture"
+              class="form-control"
+              id="picture"
+              placeholder="Enter validUrl"
+              required
+            />
+          </div>
+         
+          <div class="modal-footer">
+          
+            <button style="margin-top: 3%;"
+              type="submit"
+              class="btn btn-success"
+              (click)="confirmation()"
+            >
+              Create
+            </button>
+          </div>
+        </form>
+      </div>
+    

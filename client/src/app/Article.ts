@@ -1,6 +1,6 @@
-export interface Article{
-	id:number;
-	name:string;
-	price:number;
-	imageUrl:String;
+export interface Article {
+  id: number;
+  name: string;
+  price: number;
+  picture: String;
 }
